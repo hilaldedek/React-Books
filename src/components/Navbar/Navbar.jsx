@@ -4,11 +4,10 @@ import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import book from "../../assets/book.png";
 
 
 
@@ -61,11 +60,12 @@ export const Navbar = () => {
       <AppBar position="static" sx
       ={{backgroundColor:"#3F1D38"}}>
         <Toolbar>
+          <img src={book} alt="book" width={"35rem"} height={"35rem"} />
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1,fontFamily:"Merriweather"  ,display: { xs: 'none', sm: 'block'}, position:"absolute",left:"10px"}}
+            sx={{ flexGrow: 1,fontFamily:"Merriweather"  ,display: { xs: 'none', sm: 'block'}, position:"absolute",marginLeft:"2.8rem", fontSize:"2rem"}}
           >
             BOOKs
           </Typography>
