@@ -19,7 +19,7 @@ const divStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  height: "200px"
+  height: "350px"
 }
 const slideImages = [
   {

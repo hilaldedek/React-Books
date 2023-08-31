@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../Navbar/Navbar.css"
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -7,20 +7,18 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import book from "../../assets/book.png";
-import 'animate.css';
 
 
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: "#291525",
+    backgroundColor: "black",
     '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
+      backgroundColor: "#141111b6",
     },
     marginLeft: 0,
-    width: '100%',
+    width: '75%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(1),
       width: 'auto',
@@ -55,28 +53,40 @@ const Search = styled('div')(({ theme }) => ({
   }));
 
 export const Navbar = () => {
+  const [input,setInput]=useState("");
+  console.log(input);
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    const getBook=async function(){
+      const url=`https://www.googleapis.com/books/v1/volumes?q=${input}`;
+      const res=await fetch(url);
+      const data=await res.json();
+      console.log(data);
+    }
+    getBook();
+  }
   return (
     <div>
              <Box sx={{ flexGrow: 1}}>
       <AppBar position="static" sx
-      ={{backgroundColor:"#22111f"}}>
+      ={{backgroundColor:"white"}}>
         <Toolbar>
           <Typography
             variant="h6"
             noWrap
             component="div"
-            className='animate__fadeInLeft'
-            sx={{ flexGrow: 1,fontFamily:"Playfair Display"  ,display: { xs: 'none', sm: 'block'}, position:"absolute",marginLeft:"0.2rem", fontSize:"2.7rem",color:"#542c4c"}}
+            sx={{ flexGrow: 1,fontFamily:"Playfair Display"  ,display: { xs: 'none', sm: 'block'}, position:"absolute",marginLeft:"0.2rem", fontSize:"2.7rem",color:"black"}}
           >
             BOOKs
           </Typography>
-                <Search sx={{position:"absolute",right:"0px"}}>
+                <Search sx={{position:"absolute",right:"0px"}} value={input} onChange={(e)=>setInput(e.target.value)} onSubmit={handleSubmit}>
                 <SearchIconWrapper>
                 <SearchIcon/>
                 </SearchIconWrapper>
                 <StyledInputBase
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }}
+                
                 />
             </Search>
           

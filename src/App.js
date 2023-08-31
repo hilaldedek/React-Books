@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Navbar/>
       <Main/>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }

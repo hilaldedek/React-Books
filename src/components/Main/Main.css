@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap');
 .slide-container{
-    top: 3rem;
     position: relative;
     margin: auto;
     width: 100%;
     font-size: 2rem;
     font-family: 'DM Serif Display', serif;
-    color:"#542c4c"
+    
 }
 .img{
     display: flex;
