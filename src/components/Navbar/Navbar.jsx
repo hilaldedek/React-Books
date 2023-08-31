@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import book from "../../assets/book.png";
+import 'animate.css';
 
 
 
@@ -58,14 +59,14 @@ export const Navbar = () => {
     <div>
              <Box sx={{ flexGrow: 1}}>
       <AppBar position="static" sx
-      ={{backgroundColor:"#3F1D38"}}>
+      ={{backgroundColor:"#22111f"}}>
         <Toolbar>
-          <img src={book} alt="book" width={"35rem"} height={"35rem"} />
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1,fontFamily:"Merriweather"  ,display: { xs: 'none', sm: 'block'}, position:"absolute",marginLeft:"2.8rem", fontSize:"2rem"}}
+            className='animate__fadeInLeft'
+            sx={{ flexGrow: 1,fontFamily:"Playfair Display"  ,display: { xs: 'none', sm: 'block'}, position:"absolute",marginLeft:"0.2rem", fontSize:"2.7rem",color:"#542c4c"}}
           >
             BOOKs
           </Typography>
