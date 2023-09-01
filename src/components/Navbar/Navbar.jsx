@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import "../Navbar/Navbar.css"
-import { styled, alpha } from '@mui/material/styles';
+import { styled} from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
+import { Button } from '@mui/material';
+import Card from '../Card/Card';
 
 
 
@@ -54,16 +56,24 @@ const Search = styled('div')(({ theme }) => ({
 
 export const Navbar = () => {
   const [input,setInput]=useState("");
+  const [result,setResult]=useState("");
   console.log(input);
   const handleSubmit=(e)=>{
-    e.preventDefault();
+    if(e.key==='Enter'){
+      e.preventDefault();
     const getBook=async function(){
       const url=`https://www.googleapis.com/books/v1/volumes?q=${input}`;
       const res=await fetch(url);
       const data=await res.json();
+      setResult(data);
+      console.log(
+        result);
       console.log(data);
+      console.log("clicked enter");
     }
     getBook();
+    }
+    
   }
   return (
     <div>
@@ -79,17 +89,24 @@ export const Navbar = () => {
           >
             BOOKs
           </Typography>
-                <Search sx={{position:"absolute",right:"0px"}} value={input} onChange={(e)=>setInput(e.target.value)} onSubmit={handleSubmit}>
-                <SearchIconWrapper>
-                <SearchIcon/>
+                <Search sx={{position:"absolute",right:"0px"}} value={input} onChange={(e)=>setInput(e.target.value)} className='search'>
+                <Button variant="text" className='searchButton' style={{color:"white"}} ><SearchIconWrapper>
+                  <SearchIcon/>
                 </SearchIconWrapper>
-                <StyledInputBase
+                </Button>
+                  <StyledInputBase
                 placeholder="Search…"
-                inputProps={{ 'aria-label': 'search' }}
-                
+                inputProps={{ 'aria-label': 'search' }} onKeyPress={handleSubmit}
                 />
+                <div>
+                  {
+                    result.length>0 && <Card item={result}/>
+
+                  }
+                </div>
+               
+                
             </Search>
-          
         </Toolbar>
       </AppBar>
     </Box>

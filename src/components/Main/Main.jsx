@@ -1,13 +1,10 @@
 import React from 'react'
 import "../Main/Main.css";
-import Carousel from 'react-bootstrap/Carousel';
-import Image from 'react-bootstrap/Image';
-import book1 from "../../assets/book1.jpeg";
-import book2 from "../../assets/book2.jpeg";
-import book3 from "../../assets/book3.jpeg";
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import 'animate.css';
+
+
 
 const spanStyle = {
   padding: '5px',
@@ -38,8 +35,8 @@ const slideImages = [
     person:'~Neil Gaiman'
   },
 ];
-export const Main = () => {
-    
+export const Main = ({item}) => {
+  console.log(item);
   return (
     <div >
       <div className="slide-container">
@@ -53,6 +50,7 @@ export const Main = () => {
           ))} 
         </Slide>
       </div>
+      
     </div>
 
   )
