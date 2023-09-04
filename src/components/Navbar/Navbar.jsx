@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {createContext, useState } from 'react';
 import "../Navbar/Navbar.css"
 import { styled} from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -9,6 +9,7 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { Button } from '@mui/material';
 import Card from '../Card/Card';
+
 
 
 
@@ -65,15 +66,14 @@ export const Navbar = () => {
       const url=`https://www.googleapis.com/books/v1/volumes?q=${input}`;
       const res=await fetch(url);
       const data=await res.json();
-      setResult(data);
-      console.log(
-        result);
+      setResult(Object.values(data)[2]);
+      console.log(result);
       console.log(data);
       console.log("clicked enter");
     }
+     
     getBook();
     }
-    
   }
   return (
     <div>
@@ -96,14 +96,13 @@ export const Navbar = () => {
                 </Button>
                   <StyledInputBase
                 placeholder="Search…"
-                inputProps={{ 'aria-label': 'search' }} onKeyPress={handleSubmit}
-                />
-                <div>
+                inputProps={{ 'aria-label': 'search' }} onKeyPress={handleSubmit}/>
+                
                   {
-                    result.length>0 && <Card item={result}/>
+                    (result?.length>0 && <Card item={result}/>)
 
                   }
-                </div>
+                
                
                 
             </Search>

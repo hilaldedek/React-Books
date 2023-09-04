@@ -35,8 +35,7 @@ const slideImages = [
     person:'~Neil Gaiman'
   },
 ];
-export const Main = ({item}) => {
-  console.log(item);
+export const Main = () => {
   return (
     <div >
       <div className="slide-container">

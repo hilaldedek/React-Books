@@ -3,6 +3,7 @@ import "./components/Navbar/Navbar";
 // import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import Main from './components/Main/Main';
+import Card from './components/Card/Card';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <div className="App">
       <Navbar/>
       <Main/>
+      {/* <Card/> */}
       {/* <Footer/> */}
     </div>
   );
