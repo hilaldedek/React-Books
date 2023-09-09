@@ -8,8 +8,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { Button } from '@mui/material';
-import Card from '../Card/Card';
-
+import BookCard from '../Card/Card';
 
 
 
@@ -71,7 +70,6 @@ export const Navbar = () => {
       console.log(data);
       console.log("clicked enter");
     }
-     
     getBook();
     }
   }
@@ -99,7 +97,7 @@ export const Navbar = () => {
                 inputProps={{ 'aria-label': 'search' }} onKeyPress={handleSubmit}/>
                 
                   {
-                    (result?.length>0 && <Card item={result}/>)
+                    (result?.length>0 && <BookCard item={result}/>)
 
                   }
                 
