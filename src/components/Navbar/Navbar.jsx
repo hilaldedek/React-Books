@@ -1,4 +1,4 @@
-import React, {createContext, useState } from 'react';
+import React, {createContext, useContext, useState } from 'react';
 import "../Navbar/Navbar.css"
 import { styled} from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -9,7 +9,7 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { Button } from '@mui/material';
 import BookCard from '../Card/Card';
-
+import { ResultContext } from '../Context/ResultContext';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -57,6 +57,7 @@ const Search = styled('div')(({ theme }) => ({
 export const Navbar = () => {
   const [input,setInput]=useState("");
   const [result,setResult]=useState("");
+
   console.log(input);
   const handleSubmit=(e)=>{
     if(e.key==='Enter'){
@@ -95,11 +96,7 @@ export const Navbar = () => {
                   <StyledInputBase
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }} onKeyPress={handleSubmit}/>
-                
-                  {
-                    (result?.length>0 && <BookCard item={result}/>)
-
-                  }
+                  
                 
                
                 
