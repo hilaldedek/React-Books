@@ -1,0 +1,11 @@
+.card{
+    display: flex;
+    justify-content: center;
+    
+}
+.cardDiv{
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

@@ -96,17 +96,16 @@ export const Navbar = () => {
                   <StyledInputBase
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }} onKeyPress={handleSubmit}/>
-                  
-                  {
-                    (result?.length>0 && <BookCard item={result}/>)
-
-                  }
-               
-                
             </Search>
         </Toolbar>
       </AppBar>
     </Box>
+    {
+                    result?.length>0 && (
+                    <BookCard item={result}/>
+                    )
+
+                }
     </div>
   )
 }
