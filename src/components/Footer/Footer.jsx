@@ -10,8 +10,8 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 export const Footer = () => {
     const year=new Date().getFullYear();
   return (
-    <div>
-         <AppBar position="static" sx={{position:"absolute",bottom:"0px",right:"0px",left:"0px",backgroundColor:"white",fontFamily:"Playfair Display",fontSize:"1rem", color:"black"}}>
+    <div className='footer'>
+         <AppBar position="static" sx={{position:"absolute",backgroundColor:"white",fontFamily:"Playfair Display",fontSize:"1rem", color:"black"}}>
             <p>Copyright © {year} All Rights Reserved</p>
             <div>
               <Link href="https://github.com/hilaldedek" target="_blank" style={{color:"black",margin:"3px"}}><GitHubIcon/></Link>

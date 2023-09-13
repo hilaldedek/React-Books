@@ -6,6 +6,7 @@ import 'animate.css';
 
 
 
+
 const spanStyle = {
   padding: '5px',
   background: '#07040457',
@@ -37,7 +38,8 @@ const slideImages = [
 ];
 export const Main = () => {
   return (
-    <div >
+    <div className='sliderDiv'>
+      
       <div className="slide-container">
         <Slide>
          {slideImages.map((img, index)=> (

@@ -12,7 +12,7 @@ function App() {
       <Navbar/>
       <Main/>
       <BookCard/>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }

@@ -1,1 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap');
+.footer{
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin-top: 4rem;
+}

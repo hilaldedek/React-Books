@@ -88,6 +88,14 @@ export const Navbar = () => {
           >
             BOOKs
           </Typography>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1,fontFamily:"Playfair Display"  ,display: { xs: 'none', sm: 'block'}, position:"absolute",marginLeft:"15rem", fontSize:"1rem",color:"black"}}
+          >
+            Home
+          </Typography>
                 <Search sx={{position:"absolute",right:"0px"}} value={input} onChange={(e)=>setInput(e.target.value)} className='search'>
                 <Button variant="text" className='searchButton' style={{color:"white"}} ><SearchIconWrapper>
                   <SearchIcon/>

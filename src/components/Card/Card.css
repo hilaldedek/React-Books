@@ -9,3 +9,8 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+.cardArea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
