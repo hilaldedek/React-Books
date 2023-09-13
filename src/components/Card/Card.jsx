@@ -36,7 +36,7 @@ const BookCard = ({item}) => {
                     sx={{maxWidth:"16rem",maxHeight:"25rem",position:"relative",margin:"auto"}}
                   />
                   <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography gutterBottom variant="h5" component="div"sx={{fontFamily: 'EB Garamond',fontWeight:"600"}}>
                       {item?.volumeInfo?.title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">

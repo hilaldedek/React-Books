@@ -88,14 +88,7 @@ export const Navbar = () => {
           >
             BOOKs
           </Typography>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1,fontFamily:"Playfair Display"  ,display: { xs: 'none', sm: 'block'}, position:"absolute",marginLeft:"15rem", fontSize:"1rem",color:"black"}}
-          >
-            Home
-          </Typography>
+          
                 <Search sx={{position:"absolute",right:"0px"}} value={input} onChange={(e)=>setInput(e.target.value)} className='search'>
                 <Button variant="text" className='searchButton' style={{color:"white"}} ><SearchIconWrapper>
                   <SearchIcon/>
@@ -107,6 +100,16 @@ export const Navbar = () => {
             </Search>
         </Toolbar>
       </AppBar>
+    </Box>
+    <Box sx={{flexGrow: 1}}>
+  
+      <Button sx={{color:"black",backgroundColor:"white",margin:"1rem"}} className='navButton'>
+        Home
+      </Button>
+      <Button sx={{color:"black",backgroundColor:"white",margin:"1rem"}} className='navButton'>
+        Favorites
+      </Button>
+      
     </Box>
     {
                     result?.length>0 && (
