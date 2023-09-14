@@ -9,6 +9,7 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { Button } from '@mui/material';
 import BookCard from '../Card/Card';
+import {useNavigate } from 'react-router-dom';
 
 
 
@@ -55,6 +56,7 @@ const Search = styled('div')(({ theme }) => ({
   }));
 
 export const Navbar = () => {
+  const navigate=useNavigate();
   const [input,setInput]=useState("");
   const [result,setResult]=useState("");
 
@@ -103,7 +105,7 @@ export const Navbar = () => {
     </Box>
     <Box sx={{flexGrow: 1}}>
   
-      <Button sx={{color:"black",backgroundColor:"white",margin:"1rem"}} className='navButton'>
+      <Button sx={{color:"black",backgroundColor:"white",margin:"1rem"}} className='navButton' onClick={()=>navigate("/")}>
         Home
       </Button>
       <Button sx={{color:"black",backgroundColor:"white",margin:"1rem"}} className='navButton'>
